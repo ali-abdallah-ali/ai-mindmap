@@ -113,6 +113,22 @@ document.addEventListener('mouseup', () => {
 
 let mindMapData;
 
+function fixJSONIssues(jsonText) {
+    try {
+        return JSON.parse(jsonText);
+    } catch (error) {
+        console.log("Invalid JSON detected. Attempting to fix...");
+        let fixedJSON = jsonText;
+        fixedJSON = fixedJSON.replace(/:\s*"([^"}]*)\n/g, ': "$1"');
+        try {
+            return JSON.parse(fixedJSON);
+        } catch (finalError) {
+            console.error("Could not completely fix JSON:", finalError.message);
+            return null;
+        }
+    }
+}
+
 function parseJson(jsonData) {
     const regex = /{.*}/s;
     const match = jsonData.match(regex);
@@ -120,7 +136,7 @@ function parseJson(jsonData) {
     if (match) {
         const jsonString = match[0].trim();
         try {
-            return JSON.parse(jsonString);
+            return fixJSONIssues(jsonString);
         } catch (e) {
             console.log("Invalid JSON:", e);
             return null;
