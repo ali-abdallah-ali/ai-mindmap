@@ -1,0 +1,66 @@
+#mindmap-button {
+    padding: 8px 12px;
+    background-color: #5ca003;
+    color: white;
+    border: #0056b3;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#mindmap-button:hover {
+    background-color: #86cf27;
+}
+
+#close-button {
+    padding: 8px 12px;
+    background-color: #a00310;
+    color: white;
+    border: #0056b3;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#close-button:hover {
+    background-color: #d81929;
+}
+
+#replay-button {
+    padding: 8px 12px;
+    background-color: #03ca1e;
+    color: white;
+    border: #0056b3;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#replay-button:hover {
+    background-color: #3df055;
+}
+
+#mindMapCanvas {
+    border: 1px solid #000;
+    background-color: white;
+}
+
+#mindMapTooltip {
+    position: absolute;
+    padding: 5px;
+    background-color: rgba(255, 255, 0, 0.9);
+    color: black;
+    border-radius: 3px;
+    border-color: #000;
+    border-style: solid;
+    font-size: 14px;
+    pointer-events: none;
+    display: none;
+    max-width: 400px;
+}
